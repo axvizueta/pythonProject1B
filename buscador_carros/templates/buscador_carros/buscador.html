@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buscador de Carros</title>
+    </head>
+    <style>
+        th, td {
+          padding: 15px;
+          text-align: left;
+        }
+    </style>
+    <body>
+        <header>
+            <h1><a href="/">Buscador de carros</a></h1>
+        </header>
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>Km y Ciudad</th>
+                <th>Precio</th>
+              </tr>
+            {% for carro in carros %}
+            <tr>
+                <td>
+                    {{ carro.title }}
+                </td>
+                <td>
+                    {{ carro.kms_y_city }}
+                </td>
+                <td>
+                    $ {{ carro.price }}
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </body>
+</html>
